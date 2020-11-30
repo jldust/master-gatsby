@@ -31,7 +31,6 @@ export default function usePizza({ pizzas, values }) {
     console.log(e);
     setLoading(true);
     setError(null);
-    setMessage('Go eat!');
 
     // gather all the data
     const body = {
@@ -53,12 +52,12 @@ export default function usePizza({ pizzas, values }) {
     );
     const text = JSON.parse(await res.text());
 
-    // check if everything worked
+    // Validate if order was sent
     if (res.status >= 400 && res.status < 600) {
       setLoading(false); // turn off loading
       setError(text.message);
     } else {
-      // it worked!
+      // Yay it worked!
       setLoading(false);
       setMessage('Success! Come on down for your pizza');
     }
