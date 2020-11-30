@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 
 const NavStyles = styled.nav`
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   .logo {
     transform: translateY(-25%);
   }
@@ -20,6 +20,7 @@ const NavStyles = styled.nav`
     margin-top: -6rem;
   }
   li {
+    --rotate: -2deg;
     transform: rotate(var(--rotate));
     order: 1;
     &:nth-child(1) {
@@ -28,7 +29,6 @@ const NavStyles = styled.nav`
     &:nth-child(2) {
       --rotate: -2.5deg;
     }
-
     &:nth-child(4) {
       --rotate: 2.5deg;
     }
@@ -42,9 +42,6 @@ const NavStyles = styled.nav`
     &:hover {
       color: var(--red);
     }
-    /* &[aria-current='page'] {
-      color: var(--red);
-    } */
   }
 `;
 
@@ -56,7 +53,7 @@ export default function Nav() {
           <Link to="/">Hot Now</Link>
         </li>
         <li>
-          <Link to="/pizzas">Pizza Menu</Link>
+          <Link to="/pizzas/">Pizza Menu</Link>
         </li>
         <li>
           <Link to="/">
@@ -64,10 +61,10 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/slicemasters">Slicemasters</Link>
+          <Link to="/slicemasters">SliceMasters</Link>
         </li>
         <li>
-          <Link to="/order">Order Ahead</Link>
+          <Link to="/order">Order Ahead!</Link>
         </li>
       </ul>
     </NavStyles>
